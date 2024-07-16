@@ -1,0 +1,26 @@
+data:
+  train_urls: ["train_1000_samples.json"]
+  validation_urls: ["train_1000_samples.json"]
+model:
+  type: gpt2
+  hidden_dim: 768
+  num_heads: 12
+  num_layers: 12
+  seq_len: 1024
+  gradient_checkpointing: true
+  scale_attn_by_inverse_layer_idx: true
+trainer:
+  tracker:
+    #project: "levanter"
+    #tags: [ "openwebtext", "gpt2"]
+    - type: tensorboard
+      logdir: logs
+  mp: p=f32,c=bfloat16
+  model_axis_size: 1
+  per_device_parallelism: -1
+
+  train_batch_size: 512
+optimizer:
+  learning_rate: 6E-4
+  weight_decay: 0.1
+  min_lr_ratio: 0.1
