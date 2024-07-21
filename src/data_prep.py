@@ -16,7 +16,7 @@ def convert_data_to_json(n_samples: list, out_file):
     list_4_json = [] # a list of dictionaries of the form text:string
     for s in n_samples:
         list_4_json.append({"text":s[0] + " " + s[1]})
-    with open(Path('/opt',out_file+'.json'), 'w', encoding='utf-8') as f:
+    with open(Path('/opt',out_file), 'w', encoding='utf-8') as f:
         json.dump(list_4_json, f)
     print(f"{out_file} has been saved successfully")
 
