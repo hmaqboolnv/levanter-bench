@@ -11,10 +11,8 @@ model:
   scale_attn_by_inverse_layer_idx: true
 trainer:
   tracker:
-    #project: "levanter"
-    #tags: [ "openwebtext", "gpt2"]
-    - type: tensorboard
-      logdir: logs
+    project: "levanter"
+    tags: [ "wikitext103", "gpt2"]
   mp: p=f32,c=bfloat16
   model_axis_size: 1
   per_device_parallelism: -1
