@@ -1,6 +1,6 @@
 data:
-  train_urls: ["train_1000_samples.json"]
-  validation_urls: ["train_1000_samples.json"]
+  train_urls: ["../levanter-bench/src/train.json"]
+  validation_urls: ["../levanter-bench/src/valid.json"]
 model:
   type: gpt2
   hidden_dim: 768
